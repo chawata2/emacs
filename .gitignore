@@ -1,0 +1,16 @@
+auto-save-list/
+elpa/
+transient/
+desktop/
+package-quickstart.el*
+custom.el
+history
+persp-save/
+projectile-bookmarks.eld
+projects
+straight/
+places
+recentf
+eln-cache/
+persist/
+bookmarks
