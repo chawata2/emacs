@@ -47,6 +47,8 @@
   (winner-mode 1)              ;; Enable winner mode to easily undo window configration changes.
   (xterm-mouse-mode 1)         ;; Enable mouse support in terminal mode.
   (file-name-shadow-mode 1)    ;; Enable shadowing of filenames for clarity.
+  (show-paren-mode 1)          ;; 括弧をハイライト
+  (electric-pair-mode 1)       ;; 括弧を補完
 
   ;; Set the default coding system for files to UTF-8.
   (modify-coding-system-alist 'file "" 'utf-8)
@@ -63,6 +65,17 @@
   (when (eq system-type 'darwin)       ;; Check if the system is macOS.
     (setq mac-command-modifier 'meta)  ;; Set the Command key to act as the Meta key.
     (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 120))
+
+  ;; 高速化の設定
+  (setq vc-handled-backends '(Git))                     ;; vcのバックエンドをGitのみに変更
+  (setq auto-mode-case-fold nil)                        ;; ファイル検索を2回行わないようにする
+  (setq idle-update-delay 1.0)                          ;; UIの更新頻度を下げる
+  (setq-default bidi-display-reordering 'left-to-right) ;; 双方向の並び替えを抑制する
+  (setq bidi-inhibit-bpa t)                             ;; 長い行の双方向スキャン
+  (setq-default cursor-in-non-selected-windows nil)     ;; フォーカスされていないウィンドウのカーソルを削除
+  (setq highlight-nonselected-windows nil)
+  (setq fast-but-imprecise-scrolling t)                 ;; 高速なスクロール
+  (setq ffap-machine-p-known 'reject)                   ;; ドメインにpingを送信しない
   )
 
 (provide 'pkg-emacs)
