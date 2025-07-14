@@ -1,11 +1,4 @@
 ;;; init.el --- Emacs config -*- lexical-binding: t; -*-
-(setenv "LIBRARY_PATH"
-        (string-join
-         '("/opt/homebrew/Cellar/gcc/15"
-           "/opt/homebrew/Cellar/libgccjit/15"
-           "/opt/homebrew/opt/gcc/lib/gcc/15/gcc/aarch64-apple-darwin24/15")
-         ":"))
-
 (setq user-emacs-directory (file-name-directory load-file-name))
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
