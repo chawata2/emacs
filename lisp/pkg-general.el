@@ -46,6 +46,11 @@
 	"TAB k" '(activities-kill :whitch-key "kill")
 	"TAB RET" '(activities-switch :whitch-key "switch")
 	"TAB l" '(activities-list :whitch-key "list")
+
+	;; org
+	"o" '(:ignore t :which-key "org")
+	"oc" '(org-capture :which-key "org-capture")
+	"oa" '(org-capture :which-key "org-agenda")
     )
 )
 
