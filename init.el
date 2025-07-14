@@ -60,6 +60,8 @@
 (require 'pkg-projectile)
 (require 'pkg-activities)
 (require 'pkg-vterm)
+(require 'pkg-undo-fu)
+(require 'pkg-undo-fu-session)
 
 ;; External
 (require 'pkg-magit)
