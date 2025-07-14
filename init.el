@@ -62,6 +62,7 @@
 (require 'pkg-vterm)
 (require 'pkg-undo-fu)
 (require 'pkg-undo-fu-session)
+(require 'pkg-rainbow-delimiters)
 
 ;; External
 (require 'pkg-magit)
