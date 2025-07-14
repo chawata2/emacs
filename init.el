@@ -36,7 +36,6 @@
  '(("melpa"  . "https://melpa.org/packages/")
    ("nongnu" . "https://elpa.nongnu.org/nongnu/")
    ("gnu"    . "https://elpa.gnu.org/packages/")))
-
 ;; Buildin packages
 (require 'pkg-emacs)
 (require 'pkg-isearch)
@@ -60,6 +59,7 @@
 (require 'pkg-corfu)
 (require 'pkg-projectile)
 (require 'pkg-activities)
+(require 'pkg-vterm)
 
 ;; External
 (require 'pkg-magit)

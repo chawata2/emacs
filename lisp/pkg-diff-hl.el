@@ -2,14 +2,12 @@
 
 (use-package diff-hl
   :straight t
-  :defer t
-  :hook
-  (find-file . (lambda ()
-                 (global-diff-hl-mode)           ;; Enable Diff-HL mode for all files.
-                 (diff-hl-flydiff-mode)          ;; Automatically refresh diffs.
-                 (diff-hl-margin-mode)))         ;; Show diff indicators in the margin.
-  :custom
-  (diff-hl-side 'left)                           ;; Set the side for diff indicators.
-  )
+  :hook ((magit-pre-refresh . diff-hl-magit-pre-refresh)
+         (magit-post-refresh . diff-hl-magit-post-refresh)
+         (dired-mode . diff-hl-dired-mode))
+  :init
+  (global-diff-hl-mode +1)
+  (global-diff-hl-show-hunk-mouse-mode +1)
+  (diff-hl-margin-mode +1))
 
 (provide 'pkg-diff-hl)
