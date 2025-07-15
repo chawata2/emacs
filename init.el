@@ -59,20 +59,20 @@
 (require 'pkg-corfu)
 (require 'pkg-projectile)
 (require 'pkg-activities)
-(require 'pkg-vterm)
+(require 'pkg-eat)
 (require 'pkg-undo-fu)
 (require 'pkg-undo-fu-session)
 (require 'pkg-rainbow-delimiters)
 
-;; External
+;; External package
 (require 'pkg-magit)
 (require 'pkg-diff-hl)
 (require 'pkg-indent-guide)
+
+;; Language config
+(require 'lang-org)
 
 ;; Keybindings
 (require 'pkg-evil)
 (require 'pkg-general)
 (require 'pkg-which-key)
-
-;; Old config
-(require 'lang-org)

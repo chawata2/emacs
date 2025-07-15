@@ -7,6 +7,7 @@
 
   (general-create-definer my/leader-keys
     :states '(normal visual emacs)
+	:keymaps 'override
     :prefix "SPC"
     :non-normal-prefix "M-SPC")
 
@@ -51,6 +52,11 @@
 	"o" '(:ignore t :which-key "org")
 	"oc" '(org-capture :which-key "org-capture")
 	"oa" '(org-capture :which-key "org-agenda")
+
+	;; eat
+	"t" '(:ignore t :which-key "eat terminal")
+	"to" '(eat :which-key "eat")
+	"tj" '(my/open-eat-below :which-key "open-eat-below")
     )
 )
 
