@@ -58,6 +58,14 @@
 	"to" '(eat :which-key "eat")
 	"tj" '(my/open-eat-below :which-key "open-eat-below")
     )
+
+  ;; eat terminal のキーバインド
+  (with-eval-after-load 'eat
+	;;
+	(general-def
+      :states '(insert normal visual)
+      :keymaps 'eat-semi-char-mode-map
+      "C-c p" #'eat-yank))
 )
 
 (provide 'pkg-general)
