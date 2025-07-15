@@ -69,6 +69,7 @@
 (require 'pkg-diff-hl)
 (require 'pkg-indent-guide)
 (require 'pkg-copilot)
+(require 'pkg-chatgpt-shell)
 
 ;; Language config
 (require 'lang-org)
