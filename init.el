@@ -68,6 +68,7 @@
 (require 'pkg-magit)
 (require 'pkg-diff-hl)
 (require 'pkg-indent-guide)
+(require 'pkg-copilot)
 
 ;; Language config
 (require 'lang-org)

@@ -17,4 +17,5 @@
   (split-window-below)
   (other-window 1)
   (eat))
-ovide 'pkg-eat)
+
+(provide 'pkg-eat)
