@@ -16,3 +16,4 @@ persist/
 bookmarks
 undo-fu-session/
 .cache/
+.chatgpt-shell.el

@@ -85,7 +85,7 @@
       "M-r" #'chatgpt-shell-prompt-compose-search-history
       "M-p" #'chatgpt-shell-prompt-compose-previous-history
       "M-n" #'chatgpt-shell-prompt-compose-next-history)
-	
+
 	;; chatgpt-shell-prompt-compose-view-mode のキーバインド
 	(general-def
       :states '(normal visual)
