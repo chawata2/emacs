@@ -5,9 +5,16 @@
   :demand t
   :after evil
   :config
+  (general-evil-setup)
+
+  (general-imap
+   "j"
+   (general-key-dispatch 'self-insert-command
+     :timeout 0.25
+     "k" 'evil-normal-state))
 
   (general-create-definer my/leader-keys
-    :states '(normal visual emacs)
+
 	:keymaps 'override
     :prefix "SPC"
     :non-normal-prefix "M-SPC")
@@ -72,33 +79,6 @@
       :states '(insert normal visual)
       :keymaps 'eat-semi-char-mode-map
       "C-c p" #'eat-yank))
-
-  ;; chatgpt-shell-prompt-compose のキーバインド
-  (with-eval-after-load 'chatgpt-shell-prompt-compose
-	(general-def
-      :states '(insert normal visual)
-      :keymaps 'chatgpt-shell-prompt-compose-mode-map
-      "C-c C-c" #'chatgpt-shell-prompt-compose-send-buffer
-      "C-c C-k" #'chatgpt-shell-prompt-compose-cancel
-      "C-c C-s" #'chatgpt-shell-prompt-compose-swap-system-prompt
-      "C-c C-v" #'chatgpt-shell-prompt-compose-swap-model-version
-      "C-c C-o" #'chatgpt-shell-prompt-compose-other-buffer
-      "M-r" #'chatgpt-shell-prompt-compose-search-history
-      "M-p" #'chatgpt-shell-prompt-compose-previous-history
-      "M-n" #'chatgpt-shell-prompt-compose-next-history)
-
-	;; chatgpt-shell-prompt-compose-view-mode のキーバインド
-	(general-def
-      :states '(normal visual)
-      :keymaps 'chatgpt-shell-prompt-compose-view-mode-map
-      "n" #'chatgpt-shell-prompt-compose-next-item
-      "p" #'chatgpt-shell-prompt-compose-previous-item
-      "TAB" #'chatgpt-shell-prompt-compose-next-item
-      "S-TAB" #'chatgpt-shell-prompt-compose-previous-item
-      "r" #'chatgpt-shell-prompt-compose-reply
-      "m" #'chatgpt-shell-prompt-compose-request-more
-      "q" #'chatgpt-shell-prompt-compose-quit-and-close-frame
-      "e" #'chatgpt-shell-prompt-compose-request-entire-snippet))
 )
 
 (provide 'pkg-general)
