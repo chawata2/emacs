@@ -17,3 +17,5 @@ bookmarks
 undo-fu-session/
 .cache/
 .chatgpt-shell.el
+chatgpt/
+chatgpt-logs/
