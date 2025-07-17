@@ -11,10 +11,10 @@
    "j"
    (general-key-dispatch 'self-insert-command
      :timeout 0.25
-     "k" 'evil-normal-state))
+     "h" 'evil-normal-state))
 
   (general-create-definer my/leader-keys
-
+	:states '(normal visual emacs)
 	:keymaps 'override
     :prefix "SPC"
     :non-normal-prefix "M-SPC")
@@ -23,6 +23,7 @@
     ;; ファイル操作
     "f"  '(:ignore t :which-key "files")
     "ff" '(find-file :which-key "find file")
+    "fg" '(consult-ripgrep :which-key "grep")
 
    ;; バッファfiles
     "b"  '(:ignore t :which-key "buffers")
@@ -38,9 +39,9 @@
     ;; project
     "p"  '(:ignore t :which-key "project")
     "pp" '(consult-projectile-switch-project :which-key "switch")
-    "pf" '(consult-projectile-find-file     :which-key "find file")
-    "e" '(consult-projectile-find-file     :which-key "project find file")
-    "pg" '(consult-ripgrep                  :which-key "grep")
+    "pf" '(consult-projectile-find-file		 :which-key "find file")
+    "e" '(consult-projectile-find-file 	   	 :which-key "project find file")
+    "pg" '(projectile-ripgrep                :which-key "grep")
 
 	;; embark
 	"a"  '(embark-act     :which-key "embark act")

@@ -63,6 +63,8 @@
 (require 'pkg-undo-fu)
 (require 'pkg-undo-fu-session)
 (require 'pkg-rainbow-delimiters)
+(require 'pkg-rg)
+(require 'pkg-wgrep)
 
 ;; External package
 (require 'pkg-magit)
