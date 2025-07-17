@@ -3,6 +3,7 @@
 (use-package general
   :straight t
   :demand t
+  :after evil
   :config
 
   (general-create-definer my/leader-keys

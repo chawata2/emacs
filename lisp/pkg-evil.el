@@ -1,6 +1,8 @@
 ;;; -*- lexical-binding: t; -*-
+
 (use-package evil
   :straight t
+  :disabled t
   :init
   (setq evil-want-integration t            ; evil-collection 連携用
         evil-want-keybinding nil           ; 同上（C-h で HELP を残す）
@@ -35,7 +37,7 @@
   )
 
 (use-package evil-commentary
-:straight t
+  :straight t
   :after evil
   :config
   (evil-commentary-mode)
