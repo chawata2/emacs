@@ -19,3 +19,4 @@ undo-fu-session/
 .chatgpt-shell.el
 chatgpt/
 chatgpt-logs/
+tree-sitter/

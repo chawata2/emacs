@@ -42,6 +42,7 @@
 (require 'pkg-smerge-mode)
 (require 'pkg-eldoc)
 (require 'pkg-desktop)
+(require 'pkg-treesit)
 
 ;; Load path
 (require 'pkg-exec-path-from-shell)
@@ -75,6 +76,8 @@
 
 ;; Language config
 (require 'lang-org)
+(require 'lang-json)
+(require 'lang-typescript)
 
 ;; Keybindings
 (require 'pkg-evil)
