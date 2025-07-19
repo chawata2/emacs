@@ -1,0 +1,112 @@
+** Emacsインストール
+
+*** MacOS
+
+依存ライブラリをインストールする。
+#+begin_src sh
+brew install \
+  autoconf automake texinfo pkg-config cmake \
+  gnutls jansson jpeg libpng giflib libtiff librsvg \
+  libxml2 imagemagick \
+  libgccjit gcc tree-sitter
+#+end_src
+
+Emacsのソースをダウンロードする。
+サイズが500MBくらいあり ~git clone~ だと時間がかかったので、tarファイルでダウンロードした方が良いかもしれない。
+#+begin_src sh
+mkdir -p ~/src && cd ~/src
+git clone https://git.savannah.gnu.org/git/emacs.git
+cd emacs
+# 特定バージョンが欲しければ:
+# git checkout emacs-30.1
+#+end_src
+
+configureを生成。
+ #+begin_src sh
+./autogen.sh
+ #+end_src
+
+ビルド構成を作成する。
+ #+begin_src sh
+./configure \
+  --with-ns                       \
+  --with-json                     \
+  --with-native-compilation       \
+  --with-tree-sitter              \
+  --with-modules                  \
+  --with-imagemagick              \
+  --with-rsvg                     \
+  --with-xwidgets                 \
+  --without-dbus --without-pop    \
+  --without-compress-install
+ #+end_src
+
+ビルド&インストール
+#+begin_src
+make -j"$(sysctl -n hw.ncpu)"
+make install                      # 完了後 nextstep/Emacs.app が出来る
+mv nextstep/Emacs.app /Applications/
+#+end_src
+
+** 依存
+*** ripgrep
+
+#+begin_src sh
+brew install ripgrep
+#+end_src
+
+*** pdf-tools
+- poppler
+- automake
+
+  #+begin_src sh
+brew install poppler automake
+  #+end_src
+
+*** gptel
+
+OpenAIのAPIキーを取得する方法が必要。
+~pass~ を使用して管理している。
+
+- gnupg: GPG
+- pass: パスワードマネージャー
+
+鍵を生成。
+#+begin_src sh
+gpg --full-generate-key
+#+end_src
+
+作成された鍵を確認。
+#+begin_src sh
+gpg --list-secret-keys --keyid-format=long
+#+end_src
+
+結果
+#+begin_src
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+[keyboxd]
+---------
+sec   ed25519/XXXXXXXXXXXXXXXX 2025-07-15 [SC]
+      YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+uid                 [ultimate] secret
+ssb   cv25519/ZZZZZZZZZZZZZZZZ 2025-07-15 [E]
+#+end_src
+
+公開鍵IDは ~XXXXXXXXXXXXXXXX~ となる。
+
+passストアを初期化する。
+#+begin_src sh
+pass init XXXXXXXXXXXXXXXX
+#+end_src
+
+OpenAIのAPIキーを保存する。
+#+begin_src sh
+pass insert openai-key
+#+end_src
+
+保存したシークレットを確認。
+#+begin_src sh
+pass show openai-key
+#+end_src

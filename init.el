@@ -73,11 +73,13 @@
 (require 'pkg-indent-guide)
 (require 'pkg-copilot)
 (require 'pkg-gptel)
+(require 'pkg-pdf-tools)
 
 ;; Language config
 (require 'lang-org)
 (require 'lang-json)
 (require 'lang-typescript)
+(require 'lang-rust)
 
 ;; Keybindings
 (require 'pkg-evil)

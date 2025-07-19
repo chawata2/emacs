@@ -8,6 +8,7 @@
 		(json "https://github.com/tree-sitter/tree-sitter-json")
         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
         (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+		(rust "https://github.com/tree-sitter/tree-sitter-rust")
         ))
 
 ;; Treesitの言語をインストールする

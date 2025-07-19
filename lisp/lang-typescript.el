@@ -6,6 +6,8 @@
   ("\\.[m]ts\\'" . tsx-ts-mode)
   ("\\.js[x]?\\'" . tsx-ts-mode)
   ("\\.[mc]js\\'" . tsx-ts-mode)
+  :hook
+  (tsx-ts-mode . eglot-ensure)
   :config
   (setq typescript-ts-mode-indent-offset 2)
   )
