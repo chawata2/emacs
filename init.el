@@ -81,6 +81,9 @@
 (require 'lang-typescript)
 (require 'lang-rust)
 
+;; My functons
+(require 'misc)
+
 ;; Keybindings
 (require 'pkg-evil)
 (require 'pkg-general)

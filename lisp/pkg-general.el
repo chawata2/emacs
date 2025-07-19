@@ -11,7 +11,7 @@
    "j"
    (general-key-dispatch 'self-insert-command
      :timeout 0.25
-     "h" 'evil-normal-state))
+     "k" 'evil-normal-state))
 
   (general-create-definer my/leader-keys
 	:states '(normal visual emacs)
@@ -67,10 +67,9 @@
 	"to" '(eat :which-key "eat")
 	"tj" '(my/open-eat-below :which-key "open-eat-below")
 
-	;; chatgpt-shell
-	"c" '(:ignore t :which-key "chatgpt-shell")
-	"cc" '(chatgpt-shell :which-key "chatgpt-shell")
-	"cp" '(chatgpt-shell-prompt-compose :which-key "prompt-compose")
+	;; copilot
+	"c" '(:ignore t :which-key "ai")
+	"ct" '(copilot-mode :which-key "toggole copilot")
     )
 
   ;; eat terminal のキーバインド
