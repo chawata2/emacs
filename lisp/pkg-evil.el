@@ -8,7 +8,9 @@
         evil-search-module 'isearch        ; / 検索に isearch UI
         evil-vsplit-window-right t         ; :vsp は右側に開く
         evil-split-window-below  t         ; :sp  は下に開く
-        evil-undo-system 'undo-redo)       ; Emacs 28+ の native undo を使用
+        evil-undo-system 'undo-redo		   ; Emacs 28+ の native undo を使用
+		evil-want-C-u-scroll t             ; C-u でスクロール
+		)
   :config
   (evil-mode 1)
   ;; バッファ全体を選択するテキストオブジェクトを定義

@@ -5,8 +5,12 @@
  :ensure t
  :hook (prog-mode . copilot-mode)
  :config
- (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
- (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+ (with-eval-after-load 'copilot
+   (define-key copilot-completion-map (kbd "C-c t") #'copilot-mode)
+   (define-key copilot-completion-map (kbd "C-c c") #'copilot-accept-completion)
+   (define-key copilot-completion-map (kbd "C-c l") #'copilot-accept-completion-by-line)
+   (define-key copilot-completion-map (kbd "C-c w") #'copilot-accept-completion-by-word)
+   )
  )
 
 (provide 'pkg-copilot)

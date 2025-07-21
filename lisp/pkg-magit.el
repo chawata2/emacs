@@ -5,10 +5,12 @@
 (use-package magit
   :straight t
   :defer t
-  :commands (magit-status magit-blame-addition)
-  :custom
-  (magit-bury-buffer-function #'magit-restore-window-configuration)          ;; windowの配置を戻す
-  (magit-diff-refine-hunk 'all)
+  :bind
+  ("C-c C-i" . magit-status)
+;;  :commands (magit-status magit-blame-addition)
+;;  :custom
+;;  (magit-bury-buffer-function #'magit-restore-window-configuration)          ;; windowの配置を戻す
+;;  (magit-diff-refine-hunk 'all)
   )
 
 (provide 'pkg-magit)

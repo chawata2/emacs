@@ -16,7 +16,15 @@
   (unless (display-graphic-p)
     (use-package corfu-terminal
       :straight t
-      :config (corfu-terminal-mode 1))))
+      :config (corfu-terminal-mode 1)))
+
+  :config
+  ;; RETで選択候補を確定しない
+  (keymap-set corfu-map "RET" `( menu-item "" nil :filter
+                                 ,(lambda (&optional _)
+                                    (and (derived-mode-p 'eshell-mode 'comint-mode)
+                                         #'corfu-send))))
+  )
 
 (use-package corfu-popupinfo
   :ensure nil
