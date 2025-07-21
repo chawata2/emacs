@@ -16,6 +16,6 @@
   (interactive)
   (split-window-below)
   (other-window 1)
-  (eat))
+  (eat-project))
 
 (provide 'pkg-eat)
