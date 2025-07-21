@@ -7,7 +7,7 @@
     (evil-normal-state)
     win))
 
-(add-to-list 'display-buffer-alist
-             '("\\*Async Shell Command\\*.*" . (my/async-shell-command-display)))
+;; (add-to-list 'display-buffer-alist
+;;              '("\\*Async Shell Command\\*.*" . (my/async-shell-command-display)))
 
 (provide 'misc)

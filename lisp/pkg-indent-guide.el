@@ -2,6 +2,7 @@
 
 (use-package indent-guide
   :straight t
+  :disabled t
   :defer t
   :custom
   (indent-guide-char      "│")

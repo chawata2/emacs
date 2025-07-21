@@ -61,10 +61,11 @@
   (load custom-file :noerror)
 
   :config
-  (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font"  :height 120)
+  ;; (set-face-attribute 'default nil :family "更紗等幅ゴシック J"  :Height 130)
+  (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 130)
   (when (eq system-type 'darwin)       ;; Check if the system is macOS.
     (setq mac-command-modifier 'meta)  ;; Set the Command key to act as the Meta key.
-    (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 120))
+    (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 130))
 
   ;; 高速化の設定
   (setq vc-handled-backends '(Git))                     ;; vcのバックエンドをGitのみに変更
