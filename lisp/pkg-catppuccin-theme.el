@@ -1,14 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
 
-(use-package catppuccin-theme
-  :straight t
-  :disabled t
-  :config
-  (load-theme 'catppuccin :no-confirm)
-  (setq catppuccin-flavor 'mocha)
-  (catppuccin-reload)
-  )
-
 (use-package leuven-theme
   :straight t
   :disabled t
@@ -16,19 +7,26 @@
   (load-theme 'leuven t)
   )
 
-(setq modus-themes-bold-constructs t
-	  modus-themes-mixed-fonts nil
-	  modus-themes-variable-pitch-ui t
-	  modus-themes-custom-auto-reload t
-	  modus-themes-disable-other-themes t
+(use-package doom-themes
+  :straight t
+  :custom
+  ;; Global settings (defaults)
+  (doom-themes-enable-bold t)   ; if nil, bold is universally disabled
+  (doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  ;; for treemacs users
+  ;; (doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  :config
+  ;; doom-solarized-light
+  ;; doom-nord-aurora
+  (load-theme 'doom-nord-aurora t)
 
-      ;; Options for `modus-themes-prompts' are either nil (the
-      ;; default), or a list of properties that may include any of those
-      ;; symbols: `italic', `WEIGHT'
-      modus-themes-prompts '(italic bold)
-      )
-;; Load the theme of your choice.
-(load-theme 'modus-operandi)
-(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (nerd-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
 
 (provide 'pkg-catppuccin-theme)
